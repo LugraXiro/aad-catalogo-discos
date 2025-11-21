@@ -54,6 +54,62 @@ public class App
             new String[]{"Wanna Be Startin' Somethin'", "Thriller", "Beat It", "Billie Jean"}
         ));
 
+        discos.add(new Disco(
+            "Jinx",
+            "Crumb",
+            2019, 6, 14,
+            "Psychedelic Pop",
+            new String[]{"Cracking", "Nina", "Ghostride", "Fall Down", "The Letter"}
+        ));
+
+        discos.add(new Disco(
+            "Is This It",
+            "The Strokes",
+            2001, 7, 30,
+            "Indie Rock",
+            new String[]{"Is This It", "The Modern Age", "Soma", "Barely Legal", "Someday"}
+        ));
+
+        discos.add(new Disco(
+            "Sempiternal",
+            "Bring Me The Horizon",
+            2013, 4, 1,
+            "Metalcore",
+            new String[]{"Can You Feel My Heart", "The House of Wolves", "Empire", "Sleepwalking", "Shadow Moses"}
+        ));
+
+        discos.add(new Disco(
+            "Random Access Memories",
+            "Daft Punk",
+            2013, 5, 17,
+            "Electronic",
+            new String[]{"Give Life Back to Music", "Get Lucky", "Instant Crush", "Lose Yourself to Dance", "Touch"}
+        ));
+
+        discos.add(new Disco(
+            "Modal Soul",
+            "Nujabes",
+            2005, 11, 11,
+            "Hip Hop Instrumental",
+            new String[]{"Feather", "Ordinary Joe", "Reflection Eternal", "Luv(sic) Part 3", "Flowers"}
+        ));
+
+        discos.add(new Disco(
+            "Wildlife",
+            "La Dispute",
+            2011, 10, 4,
+            "Post-Hardcore",
+            new String[]{"a Departure", "Harder Harmonies", "St. Paul Missionary Baptist Church Blues", "Safer in the Forest", "King Park"}
+        ));
+
+        discos.add(new Disco(
+            "The Mindsweep",
+            "Enter Shikari",
+            2015, 1, 19,
+            "Electronic Rock",
+            new String[]{"The Appeal & The Mindsweep I", "The One True Colour", "Anaesthetist", "The Last Garrison", "Never Let Go of the Microscope"}
+        ));
+
         // Llamar al método write para crear el XML
         Path outputFile = Path.of("discos.xml");
         write(discos, outputFile);
@@ -177,8 +233,17 @@ public class App
             e.printStackTrace();
         }
 
-
-
-        
+        /*
+        ===================================
+        Imprimir XML en consola con pretty print
+        ===================================
+        */
+        System.out.println("\n=== Contenido del XML generado ===\n");
+        try {
+            t.transform(new DOMSource(doc), new StreamResult(System.out));
+            System.out.println(); // Línea en blanco al final
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
