@@ -1,13 +1,13 @@
 package es.lugra;
 
 public class Disco {
-    String titulo;
-    String grupo;
-    int anho;
-    int mes;
-    int dia;
-    String genero;
-    String[] canciones;
+    private String titulo;
+    private String grupo;
+    private int anho;
+    private int mes;
+    private int dia;
+    private String genero;
+    private String[] canciones;
 
     public Disco(String titulo, String grupo, int anho, int mes, int dia, 
                  String genero, String[] canciones) {
