@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<discos>
+  <album id="Pink Floyd197331">
+    <titulo>The Dark Side of the Moon</titulo>
+    <grupo>Pink Floyd</grupo>
+    <fecha>
+      <anho>1973</anho>
+      <mes>3</mes>
+      <dia>1</dia>
+    </fecha>
+    <canciones>
+      <cancion pista="1">Speak to Me</cancion>
+      <cancion pista="2">Breathe</cancion>
+      <cancion pista="3">On the Run</cancion>
+      <cancion pista="4">Time</cancion>
+      <cancion pista="5">Money</cancion>
+    </canciones>
+  </album>
+  <album id="The Beatles1969926">
+    <titulo>Abbey Road</titulo>
+    <grupo>The Beatles</grupo>
+    <fecha>
+      <anho>1969</anho>
+      <mes>9</mes>
+      <dia>26</dia>
+    </fecha>
+    <canciones>
+      <cancion pista="1">Come Together</cancion>
+      <cancion pista="2">Something</cancion>
+      <cancion pista="3">Here Comes the Sun</cancion>
+    </canciones>
+  </album>
+  <album id="Michael Jackson19821130">
+    <titulo>Thriller</titulo>
+    <grupo>Michael Jackson</grupo>
+    <fecha>
+      <anho>1982</anho>
+      <mes>11</mes>
+      <dia>30</dia>
+    </fecha>
+    <canciones>
+      <cancion pista="1">Wanna Be Startin' Somethin'</cancion>
+      <cancion pista="2">Thriller</cancion>
+      <cancion pista="3">Beat It</cancion>
+      <cancion pista="4">Billie Jean</cancion>
+    </canciones>
+  </album>
+</discos>

@@ -24,7 +24,7 @@ import org.w3c.dom.Element;
  */
 public class App 
 {
-    public static void main( String[] args )
+    public static void main( String[] args ) throws Exception
     {
         // Crear lista de discos
         List<Disco> discos = new ArrayList<>();
@@ -61,7 +61,7 @@ public class App
         System.out.println("Archivo XML creado: " + outputFile.toAbsolutePath());
     }
 
-    public static void write(List<Disco> discos, Path outFile) {
+    public static void write(List<Disco> discos, Path outFile) throws Exception {
         // Asegurar que la carpeta destino existe
 
         Path parent = outFile.getParent();
@@ -104,12 +104,52 @@ public class App
             Element grupo = doc.createElement("grupo");
             grupo.setTextContent(d.getGrupo());
 
+            // Nodo fecha
+            Element fecha = doc.createElement("fecha");
+            
+                // Nodo año
+                Element anho = doc.createElement("anho");
+                anho.setTextContent(String.valueOf(d.getAnho()));
+
+                // Nodo mes
+                Element mes = doc.createElement("mes");
+                mes.setTextContent(String.valueOf(d.getMes()));
+
+                // Nodo dia
+                Element dia = doc.createElement("dia");
+                dia.setTextContent(String.valueOf(d.getDia()));
+
+            fecha.appendChild(anho);
+            fecha.appendChild(mes);
+            fecha.appendChild(dia);
+
+            //Nodo genero
+            Element genero = doc.createElement("genero");
+            genero.setTextContent(d.getGenero());
+
+            //Nodo canciones
+            Element canciones = doc.createElement("canciones");
+
+                //Nodo canción
+                int numeroPista = 1;
+                for (String c : d.getCanciones()) {
+                    Element cancion = doc.createElement("cancion");
+                    cancion.setTextContent(c);
+
+                    cancion.setAttribute("pista", String.valueOf(numeroPista));
+                    numeroPista++;
+
+                    canciones.appendChild(cancion);
+                }
+
 
 
             //Insertar cositas
             //Recordemos que tiene que ser en el orden contrario.
             album.appendChild(titulo);
             album.appendChild(grupo);
+            album.appendChild(fecha);
+            album.appendChild(canciones);
 
 
             root.appendChild(album);
@@ -123,7 +163,7 @@ public class App
         */
         Transformer t = TransformerFactory.newInstance().newTransformer();
         t.setOutputProperty(OutputKeys.INDENT, "yes");
-        t.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", 2);
+        t.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
 
 
         try (OutputStream os = Files.newOutputStream(
